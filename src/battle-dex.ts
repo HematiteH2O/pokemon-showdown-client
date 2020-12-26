@@ -855,7 +855,52 @@ const Dex = new class implements ModdedDex {
 		if (!pokemon) return '';
 		const data = this.getTeambuilderSpriteData(pokemon, gen);
 		const shiny = (data.shiny ? '-shiny' : '');
-		return 'background-image:url(' + Dex.resourcePrefix + data.spriteDir + shiny + '/' + data.spriteid + '.png);background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+		switch (id) {
+			case 'inteleonmega':
+				if (data.shiny) {
+					return 'background-image:url('https://www.smogon.com/forums/attachments/intel-front-s-png.278685/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				} else {
+					return 'background-image:url('https://www.smogon.com/forums/attachments/intel-front-png.278684/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				}
+				break;
+			case 'clefablemega':
+				if (data.shiny) {
+					return 'background-image:url('https://www.smogon.com/forums/attachments/clefnew-front-s-png.278959/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				} else {
+					return 'background-image:url('https://www.smogon.com/forums/attachments/clefnew-front-png.278958/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				}
+				break;
+			case 'lycanrocmega':
+				if (data.shiny) {
+					return 'background-image:url('https://www.smogon.com/forums/attachments/1602563766967-png.281816/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				} else {
+					return 'background-image:url('https://www.smogon.com/forums/attachments/1602563631916-png.281802/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				}
+				break;
+			case 'honchkrowmega':
+				if (data.shiny) {
+					return 'background-image:url('https://www.smogon.com/forums/attachments/honchkrow-front-s-png.285672/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				} else {
+					return 'background-image:url('https://www.smogon.com/forums/attachments/honchkrow-front-png.285671/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				}
+				break;
+			case 'raichumega':
+				if (data.shiny) {
+					return 'background-image:url('https://www.smogon.com/forums/attachments/raichu-front-s-png.286876/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				} else {
+					return 'background-image:url('https://www.smogon.com/forums/attachments/raichu-front-png.286875/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				}
+				break;
+			case 'meowsticmega':
+				return 'background-image:url('https://www.smogon.com/forums/attachments/1608840681841-png.302360/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				break;
+			case 'meowsticfmega':
+				return 'background-image:url('https://www.smogon.com/forums/attachments/1608840710757-png.302361/');background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				break;
+			default:
+				return 'background-image:url(' + Dex.resourcePrefix + data.spriteDir + shiny + '/' + data.spriteid + '.png);background-position:' + data.x + 'px ' + data.y + 'px;background-repeat:no-repeat';
+				break;
+		}
 	}
 
 	getItemIcon(item: any) {
