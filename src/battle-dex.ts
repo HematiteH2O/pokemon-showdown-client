@@ -652,6 +652,82 @@ const Dex = new class implements ModdedDex {
 			spriteData.h *= 1.5;
 			spriteData.y += -11;
 		}
+		
+		switch (spriteData.url) {
+			// inteleon
+			case 'https://play.pokemonshowdown.com/sprites/gen5/inteleonmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/intel-front-png.278684/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-back/inteleonmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/intel-back-png.278703/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-shiny/inteleonmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/intel-front-s-png.278685/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-back-shiny/inteleonmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/intel-back-s-png.278704/';
+				break;
+			// clefable
+			case 'https://play.pokemonshowdown.com/sprites/gen5/clefablemega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/clefnew-front-png.278958/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-back/clefablemega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/clefnew-back-png.278956/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-shiny/clefablemega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/clefnew-front-s-png.278959/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-back-shiny/clefablemega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/clefnew-back-s-png.278957/';
+				break;
+			// lycanrocmidday
+			case 'https://play.pokemonshowdown.com/sprites/gen5/lycanrocmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/1602563631916-png.281802/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-back/lycanrocmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/1602563643191-png.281803/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-shiny/lycanrocmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/1602563766967-png.281816/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-back-shiny/lycanrocmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/1602563776714-png.281818/';
+				break;
+			// honchkrow
+			case 'https://play.pokemonshowdown.com/sprites/gen5/honchkrowmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/honchkrow-front-png.285671/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-back/honchkrowmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/honchkrow-back-png.285669/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-shiny/honchkrowmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/honchkrow-front-s-png.285672/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-back-shiny/honchkrowmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/honchkrow-back-s-png.285670/';
+				break;
+			// raichu
+			case 'https://play.pokemonshowdown.com/sprites/gen5/raichumega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/raichu-front-png.286875/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-back/raichumega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/raichu-back-png.286873/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-shiny/raichumega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/raichu-front-s-png.286876/';
+				break;
+			case 'https://play.pokemonshowdown.com/sprites/gen5-back-shiny/raichumega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/raichu-back-s-png.286874/';
+				break;
+			// meowstic
+			case 'https://play.pokemonshowdown.com/sprites/gen5/meowsticmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/1608840681841-png.302360/';
+				break;
+			// meowsticf
+			case 'https://play.pokemonshowdown.com/sprites/gen5/meowsticfmega.png':
+				spriteData.url = 'https://www.smogon.com/forums/attachments/1608840710757-png.302361/';
+				break;
+		}
 
 		return spriteData;
 	}
@@ -710,6 +786,22 @@ const Dex = new class implements ModdedDex {
 		let top = Math.floor(num / 12) * 30;
 		let left = (num % 12) * 40;
 		let fainted = ((pokemon as Pokemon | ServerPokemon)?.fainted ? `;opacity:.3;filter:grayscale(100%) brightness(.5)` : ``);
+		switch (pokemon?.species.id) {
+			case 'inteleonmega':
+				return `background:transparent url('https://www.smogon.com/forums/attachments/intel-menu-png.278686/') no-repeat scroll -${left}px -${top}px${fainted}`;
+			case 'clefablemega':
+				return `background:transparent url('https://www.smogon.com/forums/attachments/clef-menu-png.278713/') no-repeat scroll -${left}px -${top}px${fainted}`;
+			case 'lycanrocmega':
+				return `background:transparent url('https://www.smogon.com/forums/attachments/1602563333582-png.281797/') no-repeat scroll -${left}px -${top}px${fainted}`;
+			case 'honchkrowmega':
+				return `background:transparent url('https://www.smogon.com/forums/attachments/1608515735047-png.301634/') no-repeat scroll -${left}px -${top}px${fainted}`;
+			case 'raichumega':
+				return `background:transparent url('https://www.smogon.com/forums/attachments/1608516542865-png.301635/') no-repeat scroll -${left}px -${top}px${fainted}`;
+			case 'meowsticmega':
+				return `background:transparent url('https://www.smogon.com/forums/attachments/mega_meowstic-f_icon_final-png.302434/') no-repeat scroll -${left}px -${top}px${fainted}`;
+			case 'meowsticfmega':
+				return `background:transparent url('https://www.smogon.com/forums/attachments/unknown-png.302435/') no-repeat scroll -${left}px -${top}px${fainted}`;
+		}
 		return `background:transparent url(${Dex.resourcePrefix}sprites/pokemonicons-sheet.png?v4) no-repeat scroll -${left}px -${top}px${fainted}`;
 	}
 
