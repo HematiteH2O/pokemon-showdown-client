@@ -788,19 +788,19 @@ const Dex = new class implements ModdedDex {
 		let fainted = ((pokemon as Pokemon | ServerPokemon)?.fainted ? `;opacity:.3;filter:grayscale(100%) brightness(.5)` : ``);
 		switch (pokemon?.species.id) {
 			case 'inteleonmega':
-				return `background:transparent url('https://www.smogon.com/forums/attachments/intel-menu-png.278686/') no-repeat scroll -${left}px -${top}px${fainted}`;
+				return `background:transparent url('https://www.smogon.com/forums/attachments/intel-menu-png.278686/') no-repeat scroll 0px 0px${fainted}`;
 			case 'clefablemega':
-				return `background:transparent url('https://www.smogon.com/forums/attachments/clef-menu-png.278713/') no-repeat scroll -${left}px -${top}px${fainted}`;
+				return `background:transparent url('https://www.smogon.com/forums/attachments/clef-menu-png.278713/') no-repeat scroll 0px 0px${fainted}`;
 			case 'lycanrocmega':
-				return `background:transparent url('https://www.smogon.com/forums/attachments/1602563333582-png.281797/') no-repeat scroll -${left}px -${top}px${fainted}`;
+				return `background:transparent url('https://www.smogon.com/forums/attachments/1602563333582-png.281797/') no-repeat scroll 0px 0px${fainted}`;
 			case 'honchkrowmega':
-				return `background:transparent url('https://www.smogon.com/forums/attachments/1608515735047-png.301634/') no-repeat scroll -${left}px -${top}px${fainted}`;
+				return `background:transparent url('https://www.smogon.com/forums/attachments/1608515735047-png.301634/') no-repeat scroll 0px 0px${fainted}`;
 			case 'raichumega':
-				return `background:transparent url('https://www.smogon.com/forums/attachments/1608516542865-png.301635/') no-repeat scroll -${left}px -${top}px${fainted}`;
+				return `background:transparent url('https://www.smogon.com/forums/attachments/1608516542865-png.301635/') no-repeat scroll 0px 0px${fainted}`;
 			case 'meowsticmega':
-				return `background:transparent url('https://www.smogon.com/forums/attachments/mega_meowstic-f_icon_final-png.302434/') no-repeat scroll -${left}px -${top}px${fainted}`;
+				return `background:transparent url('https://www.smogon.com/forums/attachments/mega_meowstic-f_icon_final-png.302434/') no-repeat scroll 0px 0px${fainted}`;
 			case 'meowsticfmega':
-				return `background:transparent url('https://www.smogon.com/forums/attachments/unknown-png.302435/') no-repeat scroll -${left}px -${top}px${fainted}`;
+				return `background:transparent url('https://www.smogon.com/forums/attachments/unknown-png.302435/') no-repeat scroll 0px 0px${fainted}`;
 		}
 		return `background:transparent url(${Dex.resourcePrefix}sprites/pokemonicons-sheet.png?v4) no-repeat scroll -${left}px -${top}px${fainted}`;
 	}
