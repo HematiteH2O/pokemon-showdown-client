@@ -553,8 +553,17 @@ function TeamBox(props: {team: Team | null, noLink?: boolean, button?: boolean})
 			if (!team.packedTeam) {
 				icons = <em>(empty team)</em>;
 			} else {
+				let formatMod = team.format as string;
+				let modCheck = 0;
+				var ClientMods = BattleTeambuilderTable.ClientMods;
+				for (var modid in (ClientMods)) {
+					for (var i in ClientMods[modid].formats) {
+						var formatName = ClientMods[modid].formats[i];
+						if (toID(formatName) === formatMod) modCheck = modid;
+					}
+				}
 				icons = PSTeambuilder.packedTeamNames(team.packedTeam).map(species =>
-					<span class="picon" style={Dex.getPokemonIcon(species)}></span>
+					<span class="picon" style={Dex.getPokemonIcon(species, modCheck)}></span>
 				);
 			}
 			team.iconCache = icons;
